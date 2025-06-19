@@ -48,7 +48,7 @@ const BannerWithSidebar = () => {
 
         {/* Image */}
         <img
-  src="/images/dc40ba897215f42e5883a64157f0aa3a4d1a866a.jpg"
+  src="/images/iphone.jpg"
   alt="iPhone"
   className="w-44 sm:w-60 md:w-[220px] max-w-full h-auto object-contain mt-4 sm:mt-0"
 />
