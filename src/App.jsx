@@ -1,22 +1,25 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import BannerWithSidebar from './Components/BannerWithSidebar'
-import FlashSales from './Components/flashSales'
+
 import CategoryBrowser from './Components/CategoryBrowser'
 import Products from './Components/Products'
 import Banner from './Components/Banner'
 import NewArival from './Components/NewArival'
 import Temsolien from './Components/Temsolien'
+import OurProducts from './Components/OurProducts'
+import TopProducts from './Components/TopProducts'
 
 const App = () => {
   return (
     <div>
       <Navbar/>
      <BannerWithSidebar/>
-     <FlashSales/>
+     <TopProducts/>
      <CategoryBrowser/>
      <Products/>
      <Banner/>
+     <OurProducts/>
      <NewArival/>
      <Temsolien/>
     </div>
