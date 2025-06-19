@@ -1,0 +1,43 @@
+export const products = [
+    {
+      id: 1,
+      title: 'HAVIT HV-G92 Gamepad',
+      price: 120,
+      oldPrice: 160,
+      discount: 40,
+      image: '/images/Gaming Mouse.png',
+      rating: 4.5,
+      reviews: 88,
+    },
+    {
+      id: 2,
+      title: 'AK-900 Wired Keyboard',
+      price: 960,
+      oldPrice: 1160,
+      discount: 35,
+      image: '/images/Keyboard.png',
+      rating: 4.7,
+      reviews: 75,
+    },
+    {
+      id: 3,
+      title: 'IPS LCD Gaming Monitor',
+      price: 370,
+      oldPrice: 400,
+      discount: 30,
+      image: '/images/LCD.png',
+      rating: 4.8,
+      reviews: 99,
+    },
+    {
+      id: 4,
+      title: 'S-Series Comfort Chair',
+      price: 375,
+      oldPrice: 400,
+      discount: 25,
+      image: '/images/Chair.png',
+      rating: 4.6,
+      reviews: 99,
+    },
+  ];
+  

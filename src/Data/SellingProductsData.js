@@ -1,0 +1,43 @@
+export const sellingProducts = [
+    {
+      id: 1,
+      title: 'The nourth Coat',
+      price: 260,
+      oldPrice: 360,
+      discount: 40,
+      image: '/images/Coat.png',
+      rating: 4.5,
+      reviews: 88,
+    },
+    {
+      id: 2,
+      title: 'Gucci duffle bag',
+      price: 960,
+      oldPrice: 1160,
+      discount: 35,
+      image: '/images/HandBag.png',
+      rating: 4.7,
+      reviews: 75,
+    },
+    {
+      id: 3,
+      title: 'RGB liqued CPU cooler',
+      price: 160,
+      oldPrice: 170,
+      discount: 30,
+      image: '/images/Speaker.png',
+      rating: 4.8,
+      reviews: 99,
+    },
+    {
+      id: 4,
+      title: 'Small BookSelf',
+      price: 360,
+      oldPrice: 450,
+      discount: 25,
+      image: '/images/BookSelf.png',
+      rating: 4.6,
+      reviews: 99,
+    },
+  ];
+  
