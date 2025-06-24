@@ -1,27 +1,25 @@
-import React from 'react'
-import Navbar from './Components/Navbar'
-import BannerWithSidebar from './Components/BannerWithSidebar'
-
-import CategoryBrowser from './Components/CategoryBrowser'
-import Products from './Components/Products'
-import Banner from './Components/Banner'
-import NewArival from './Components/NewArival'
-import Temsolien from './Components/Temsolien'
-import OurProducts from './Components/OurProducts'
-import TopProducts from './Components/TopProducts'
+import React from 'react';
+import Navbar from './Components/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import SignUp from './Pages/SignUp';
+import Login from './Pages/Login';
+import Footer from './Components/Footer';
+import Cart from './Components/Cart';
+import Checkout from './Components/Checkout';
 
 const App = () => {
   return (
     <div>
       <Navbar/>
-     <BannerWithSidebar/>
-     <TopProducts/>
-     <CategoryBrowser/>
-     <Products/>
-     <Banner/>
-     <OurProducts/>
-     <NewArival/>
-     <Temsolien/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/signUp' element={<SignUp/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/checkout' element ={<Checkout/>}/>
+      </Routes>
+      <Footer/>
     </div>
   )
 }

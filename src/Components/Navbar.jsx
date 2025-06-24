@@ -17,7 +17,7 @@ const Navbar = () => {
           <li className='px-1'><Link to="/">Home</Link></li>
           <li className='px-1'><Link to="/ourProducts">Contact</Link></li>
           <li className='px-1'><Link to="/aboutUs">About</Link></li>
-          <li className='px-1'><Link to="/contect">SignUp</Link></li>
+          <li className='px-1'><Link to="/signUp">SignUp</Link></li>
         </ul>
 
         {/* Search & Icons */}
@@ -34,7 +34,9 @@ const Navbar = () => {
 
           {/* Icons */}
           <FiHeart className="text-2xl text-black" />
+          <Link to='/cart'>
           <BsCart2 className="text-2xl text-black" />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
