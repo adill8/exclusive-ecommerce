@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsCart2 } from 'react-icons/bs';
+import { BsCart2, BsPerson } from 'react-icons/bs';
 import { FiSearch, FiHeart, FiShoppingCart, FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -37,6 +37,10 @@ const Navbar = () => {
           <Link to='/cart'>
           <BsCart2 className="text-2xl text-black" />
           </Link>
+          <Link to={""}>
+          <BsPerson className="text-2xl text-black"/>
+          </Link>
+          
         </div>
 
         {/* Mobile Menu Button */}
@@ -58,7 +62,8 @@ const Navbar = () => {
 
           <div className="flex space-x-4 pt-2 text-xl">
             <FiHeart />
-            <FiShoppingCart />
+            <BsCart2 />
+            <BsPerson/>
           </div>
         </div>
       )}
