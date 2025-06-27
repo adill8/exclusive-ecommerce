@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link to='/cart'>
           <BsCart2 className="text-2xl text-black" />
           </Link>
-          <Link to={""}>
+          <Link to={"/accountProfile"}>
           <BsPerson className="text-2xl text-black"/>
           </Link>
           

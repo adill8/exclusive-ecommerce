@@ -7,6 +7,8 @@ import Login from './Pages/Login';
 import Footer from './Components/Footer';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
+import AccountProfile from './Pages/AccountProfile';
+import AboutUs from './Pages/AboutUs';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/checkout' element ={<Checkout/>}/>
+        <Route path='/accountProfile' element={<AccountProfile/>}/>
+        <Route path='/aboutUs' element={<AboutUs/>}/>
         
         
 
