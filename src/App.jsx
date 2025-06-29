@@ -9,6 +9,9 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import AccountProfile from './Pages/AccountProfile';
 import AboutUs from './Pages/AboutUs';
+import Contact from './Pages/Contact';
+import ProductDetail from './Components/ProductDetail';
+import PageError from './Pages/PageError';
 
 const App = () => {
   return (
@@ -22,6 +25,9 @@ const App = () => {
         <Route path='/checkout' element ={<Checkout/>}/>
         <Route path='/accountProfile' element={<AccountProfile/>}/>
         <Route path='/aboutUs' element={<AboutUs/>}/>
+        <Route path='/contact' element ={<Contact/>}/>
+        <Route path='/productDetail/:id' element ={<ProductDetail/>}/>
+        <Route path='/pageError' element ={<PageError/>}/>
         
         
 

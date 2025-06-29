@@ -31,7 +31,7 @@ const BannerWithSidebar = () => {
 
       {/* Banner*/}
       <div className="flex flex-col sm:flex-row w-full bg-black text-white items-center justify-around p-4 rounded-lg my-6">
-        {/* Text Section */}
+        {/* Text */}
         <div className="space-y-2 text-center sm:text-left max-w-md">
           <div className="flex justify-center sm:justify-start items-center space-x-2">
             <FaApple className="text-4xl md:text-5xl" />

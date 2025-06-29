@@ -3,7 +3,7 @@ import React from "react";
 const Login = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row px-6 py-10 md:py-0">
-      {/* Left Image */}
+      {/* Image */}
       <div className="hidden md:flex flex-1 p-6">
         <img
           src="/images/Login-Pic.jpg"
@@ -12,7 +12,7 @@ const Login = () => {
         />
       </div>
 
-      {/* Right Form */}
+      {/* Form */}
       <div className="flex flex-1 items-center justify-center">
         <div className="w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-2">Log in to Exclusive</h2>

@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { Button } from '@headlessui/react';
 import { PiEyeLight, PiHeartLight, PiStarFill } from 'react-icons/pi';
 import { ourProducts } from '../Data/OurProductsData';
+import { Link } from 'react-router-dom';
 
 const OurProducts = () => {
-   const [updateProducts, setUpdateProducts] = useState(()=>{
-   return JSON.parse(localStorage.getItem("ourProducts")) || ourProducts
+  const [explorProducts] = useState(()=>{
+    const stored = localStorage.getItem('explorOurProducts');
+
+    if (stored) {
+      return JSON.parse(stored);
+    }
+    return ourProducts;
   });
 
   useEffect(()=>{
-    if(!localStorage.getItem("ourProducts")){
-      localStorage.setItem("ourProducts",JSON.stringify(ourProducts));
+    const existing = localStorage.getItem('explorOurProducts');
+
+    if (!existing || JSON.parse(existing).length === 0) {
+      localStorage.setItem('explorOurProducts', JSON.stringify(ourProducts))
     }
   },[]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
 
@@ -26,7 +34,7 @@ const OurProducts = () => {
 
       {/* Product */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 cursor-pointer">
-        {updateProducts.map((product) => (
+        {explorProducts.map((product) => (
           <div
             key={product.id}
             className="relative group overflow-hidden min-h-[350px] w-full"
@@ -43,16 +51,18 @@ const OurProducts = () => {
             </div>
 
 
-            {/* Image Section */}
-            <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="max-h-full object-contain"
-              />
-            </div>
+            {/* Image */}
 
-            {/* Text Section */}
+            <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded">
+              <Link to={`/productDetail/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-full object-contain"
+                />
+              </Link>
+            </div>
+            {/* Text */}
             <div className="bg-white py-4 ">
               <h3 className="text-md font-semibold mb-2">{product.title}</h3>
               <div className="mb-2 flex items-center text-shadow-amber-800">
@@ -77,9 +87,9 @@ const OurProducts = () => {
 
       {/* Button */}
       <div className="flex justify-center">
-        <Button className="bg-red-600 text-white text-lg font-bold py-5 px-12 my-10 rounded shadow-lg hover:bg-red-700 transition cursor-pointer">
+        <button className="bg-red-600 text-white text-lg font-bold py-5 px-12 my-10 rounded shadow-lg hover:bg-red-700 transition cursor-pointer">
           View All Products
-        </Button>
+        </button>
       </div>
 
       {/* Line */}

@@ -1,10 +1,25 @@
-import React from 'react';
-import { FaStar, FaStarHalf, FaStarHalfAlt } from 'react-icons/fa';
-import { Button } from '@headlessui/react';
-import { PiEyeLight, PiHeartLight, PiStarHalfFill } from 'react-icons/pi';
+import React, { useEffect, useState } from 'react';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { PiEyeLight, PiHeartLight } from 'react-icons/pi';
 import { sellingProducts } from '../Data/SellingProductsData';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
+  const [productSell] = useState(()=>{
+    const stored = localStorage.getItem('sellProducts');
+
+    if (stored) {
+      return JSON.parse(stored);
+    }
+    return sellingProducts;
+  });
+
+  useEffect(()=>{
+    const existing = localStorage.getItem('sellProducts');
+    if (!existing || JSON.parse(existing).length === 0) {
+      localStorage.setItem('sellProducts', JSON.stringify(sellingProducts));
+    }
+  },[]);
   return (
     <div className="max-w-7xl mx-auto px-4 py-2">
        <p className="text-red-500 font-semibold flex items-center mb-2">
@@ -14,12 +29,12 @@ const Products = () => {
       <div className='flex justify-between items-center pr-1'>
       <h2 className="text-3xl font-bold py-6 mb-10">
         Best Selling Products</h2>
-         <Button className='px-12 py-4 font-semibold bg-red-600 rounded text-gray-100 hover:bg-red-700'>View All</Button>
+         <button className='px-12 py-4 font-semibold bg-red-600 rounded text-gray-100 hover:bg-red-700'>View All</button>
          </div>
 
       {/* Product */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 cursor-pointer">
-        {sellingProducts.map((product) => (
+        {productSell.map((product) => (
           <div
             key={product.id}
             className="relative group overflow-hidden min-h-[350px] w-full"
@@ -36,16 +51,18 @@ const Products = () => {
             </div>
 
 
-            {/* Image Section */}
+            {/* Image */}
             <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded">
+              <Link to={`/productDetail/${product.id}`}>
               <img
                 src={product.image}
                 alt={product.title}
                 className="max-h-full object-contain"
               />
+              </Link>
             </div>
 
-            {/* Text Section */}
+            {/* Text */}
             <div className="bg-white py-4">
               <h3 className="text-md font-semibold mb-2">{product.title}</h3>
               <div className="mb-2">

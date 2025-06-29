@@ -96,7 +96,7 @@ const AboutUs = () => {
           />
         </div>
 
-        {/* Text Section */}
+        {/* Text */}
         <div className="bg-white py-4 text-center sm:text-start">
           <h3 className="text-md font-semibold mb-1">{member.name}</h3>
           <p className="text-sm text-gray-600">{member.role}</p>

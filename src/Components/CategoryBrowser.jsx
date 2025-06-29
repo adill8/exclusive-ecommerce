@@ -28,7 +28,7 @@ const CategoryBrowser = () => {
           <span className="text-sm font-medium">SmartWatch</span>
         </div>
 
-        {/* Camera (active style) */}
+        {/* Camera */}
         <div className="flex flex-col items-center justify-center h-32 border rounded-md bg-red-500 text-white transition">
           <PiCameraLight className="text-6xl mb-2" />
           <span className="text-sm font-medium">Camera</span>

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTruck, FaHeadphones, FaShieldAlt } from "react-icons/fa";
+import { BsHeadphones, BsShieldCheck, BsTruck } from "react-icons/bs";
 
 const Temsolien = () => {
    const features = [

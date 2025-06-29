@@ -1,11 +1,10 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa6";
 import { SiGoogle } from "react-icons/si";
 
 const SignUp = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row px-6 py-10 md:py-0">
-      {/* Left Image */}
+      {/* Image */}
       <div className="hidden md:flex flex-1 p-6">
         <img
           src="/images/Login-Pic.jpg"
@@ -14,7 +13,7 @@ const SignUp = () => {
         />
       </div>
 
-      {/* Right Form */}
+      {/* Form */}
       <div className="flex flex-1 items-center justify-center">
         <div className="w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-2">Create an account</h2>
