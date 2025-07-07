@@ -12,6 +12,9 @@ import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import ProductDetail from './Components/ProductDetail';
 import PageError from './Pages/PageError';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 const App = () => {
   return (

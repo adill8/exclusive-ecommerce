@@ -43,4 +43,5 @@ export const products = [
     rating: 4.6,
     reviews: 99,
   },
+
 ];

@@ -1,74 +1,99 @@
-import React, { useState } from 'react';
-import { BsCart2, BsPerson } from 'react-icons/bs';
-import { FiSearch, FiHeart, FiShoppingCart, FiMenu, FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Disclosure } from '@headlessui/react'
+import {
+  Bars3Icon,
+  XMarkIcon,
+  HeartIcon,
+  ShoppingCartIcon,
+  MagnifyingGlassIcon,
+  UserIcon
+} from '@heroicons/react/24/outline'
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <nav className="w-full border-b border-gray-200 overflow-x-hidden">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-2 py-4 md:flex-nowrap flex-wrap">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-black">Exclusive</div>
+    <Disclosure as="nav" className="bg-white border-b border-gray-300 py-3">
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between py-2 md:py-4">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <h1 className="text-xl font-bold">Exclusive</h1>
+              </div>
 
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex items-center space-x-6 text-black text-lg font-medium">
-          <li className='px-1'><Link to="/">Home</Link></li>
-          <li className='px-1'><Link to="/contact">Contact</Link></li>
-          <li className='px-1'><Link to="/aboutUs">About</Link></li>
-          <li className='px-1'><Link to="/signUp">SignUp</Link></li>
-        </ul>
+              {/* Nav Links */}
+              <div className="hidden md:flex space-x-6">
+                <a href="#" className="text-sm font-medium border-b-2 border-black text-gray-900">Home</a>
+                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">Contact</a>
+                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">About</a>
+                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">Sign Up</a>
+              </div>
 
-        {/* Search & Icons */}
-        <div className="hidden md:flex items-center space-x-4">
-          {/* Search Bar */}
-          <div className="flex items-center bg-gray-100 p-2 rounded-lg w-[220px]">
-            <input
-              type="text"
-              placeholder="What are you looking for?"
-              className="bg-gray-100 outline-none text-sm w-full"
-            />
-            <FiSearch className="text-2xl text-gray-600" />
+              
+              <div className="hidden md:flex items-center gap-3">
+                <div className="relative w-50">
+                  <input
+                    type="text"
+                    placeholder="What are you looking for?"
+                    className="w-full rounded pl-2 pr-8 py-1.5 text-sm text-gray-700 placeholder-gray-400 bg-gray-100 focus:outline-none"
+                  />
+                  <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 absolute right-1 top-2" />
+                </div>
+                <HeartIcon className="h-6 w-6 text-black cursor-pointer" />
+                <ShoppingCartIcon className="h-6 w-6 text-black cursor-pointer" />
+                <UserIcon className="h-6 w-6 text-black cursor-pointer" />
+              </div>
+
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md focus:outline-none">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+            </div>
           </div>
 
-          {/* Icons */}
-          <FiHeart className="text-2xl text-black" />
-          <Link to='/cart'>
-          <BsCart2 className="text-2xl text-black" />
-          </Link>
-          <Link to={"/accountProfile"}>
-          <BsPerson className="text-2xl text-black"/>
-          </Link>
-          
-        </div>
+          {/* Mobile Dropdown Menu */}
+          <Disclosure.Panel className="md:hidden px-4 pt-2 pb-4 space-y-3">
+            {/* Nav Links */}
+            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+              Home
+            </Disclosure.Button>
+            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+              Contact
+            </Disclosure.Button>
+            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+              About
+            </Disclosure.Button>
+            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+              Sign Up
+            </Disclosure.Button>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl text-black"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
-      </div>
+            {/* Mobile: Search Bar */}
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="What are you looking for?"
+                className="w-full rounded pl-3 pr-10 py-1.5 text-sm text-gray-700 placeholder-gray-400 bg-gray-100 focus:outline-none"
+              />
+              <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 absolute right-2 top-2" />
+            </div>
 
-      {/* Mobile Menu Dropdown */}
-      {menuOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-3 text-black font-medium">
-          <Link to="/" className="block">Home</Link>
-          <Link to="/ourProducts" className="block">Contact</Link>
-          <Link to="/aboutUs" className="block">About</Link>
-          <Link to="/contect" className="block">SignUp</Link>
-
-          <div className="flex space-x-4 pt-2 text-xl">
-            <FiHeart />
-            <BsCart2 />
-            <BsPerson/>
-          </div>
-        </div>
+            {/* Mobile: Icons */}
+            <div className="flex items-center gap-4 pt-2">
+              <HeartIcon className="h-6 w-6 text-black cursor-pointer" />
+              <ShoppingCartIcon className="h-6 w-6 text-black cursor-pointer" />
+              <UserIcon className="h-6 w-6 text-black cursor-pointer" />
+            </div>
+          </Disclosure.Panel>
+        </>
       )}
-    </nav>
-  );
-};
+    </Disclosure>
+  )
+}
 
 export default Navbar;
