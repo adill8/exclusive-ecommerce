@@ -23,37 +23,45 @@ const TopProducts = () => {
     }
   }, []);
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4.2,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3.2,
-          slidesToScroll: 1,
-        },
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
       },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2.2,
-          slidesToScroll: 1,
-        },
+    },
+    {
+      breakpoint: 1024, 
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1.2,
-          slidesToScroll: 1,
-        },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
       },
-    ],
-  };
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 my-4">
@@ -62,22 +70,26 @@ const TopProducts = () => {
         <span className="w-3 h-6 bg-red-500 mr-2 rounded-sm"></span> Today's
       </p>
 
-      {/* Header: Title + Timer + Arrows */}
-      <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
-        <div className="flex items-center gap-8 flex-wrap">
-          <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
+      {/* Title + Timer + Arrows */}
+      <div className="flex items-center justify-between flex-wrap gap-10 mb-8">
+       
+        <div className="flex items-center flex-wrap gap-10 space-x-20">
+  {/* Title */}
+  <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
 
-          <div className="flex gap-4 sm:gap-6 items-center mb-4">
-            {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
-              <div key={label} className="text-center">
-                <div className="text-sm text-black">{label}</div>
-                <div className="text-3xl sm:text-4xl font-bold text-black">
-                  0{i + 3}
-                </div>
-              </div>
-            ))}
-          </div>
+  {/* Timer */}
+  <div className="flex gap-4 sm:gap-6 items-center mb-4">
+    {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
+      <div key={label} className="text-center">
+        <div className="text-sm text-black">{label}</div>
+        <div className="text-3xl sm:text-4xl font-bold text-black">
+          0{i + 3}
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <div className="flex gap-6">
           {/* Left Arrow */}
@@ -118,7 +130,7 @@ const TopProducts = () => {
               </div>
 
               {/* Image */}
-              <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded">
+              <div className="bg-gray-100 p-4 mb-4 h-60 sm:h-72 md:h-80 flex items-center justify-center rounded">
                 <Link to={`/productDetail/${product.id}`}>
                   <img
                     src={product.image}

@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { PiEyeLight, PiHeartLight, PiStarFill } from 'react-icons/pi';
 import { ourProducts } from '../Data/OurProductsData';
 import { Link } from 'react-router-dom';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
 
 const OurProducts = () => {
   const [explorProducts] = useState(()=>{
@@ -28,11 +31,32 @@ const OurProducts = () => {
        <p className="text-red-500 font-semibold flex items-center my-4">
         <span className="w-3 h-6 bg-red-500 mr-2 rounded-sm"></span> Our Products
       </p>
-      {/* Title */}
-      <h2 className="text-3xl font-bold pb-8">
-        Explore Our Products</h2>
+     
+      {/* Header: Title + Timer + Arrows */}
+           <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
+               <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
+             
+             <div className="flex gap-6">
+               {/* Left Arrow */}
+               <button
+                 onClick={() => sliderRef.current?.slickPrev()}
+                 className="w-10 h-10 bg-gray-100 hover:bg-gray-300 cursor-pointer rounded-full flex items-center justify-center transition"
+               >
+                 <HiOutlineArrowLeft className="text-xl" />
+               </button>
+     
+               {/* Right Arrow */}
+               <button
+                 onClick={() => sliderRef.current?.slickNext()}
+                 className="w-10 h-10 bg-gray-100 cursor-pointer hover:bg-gray-300 rounded-full flex items-center justify-center transition"
+               >
+                 <HiOutlineArrowRight className="text-xl" />
+               </button>
+             </div>
+           </div>
 
       {/* Product */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 cursor-pointer">
         {explorProducts.map((product) => (
           <div
