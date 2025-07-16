@@ -7,10 +7,12 @@ import Banner from './Banner'
 import OurProducts from './OurProducts'
 import NewArival from './NewArival'
 import Temsolien from './Temsolien'
+import Example from './Example'
 
 const Home = () => {
   return (
     <div>
+      {/* <Example/> */}
       <BannerWithSidebar/>
       <TopProducts/>
       <CategoryBrowser/>

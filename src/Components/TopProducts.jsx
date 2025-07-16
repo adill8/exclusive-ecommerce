@@ -23,45 +23,37 @@ const TopProducts = () => {
     }
   }, []);
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  responsive: [
-    {
-      breakpoint: 1280,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
       },
-    },
-    {
-      breakpoint: 1024, 
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
       },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
-
+    ],
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 my-4">
@@ -72,24 +64,22 @@ const settings = {
 
       {/* Title + Timer + Arrows */}
       <div className="flex items-center justify-between flex-wrap gap-10 mb-8">
-       
         <div className="flex items-center flex-wrap gap-10 space-x-20">
-  {/* Title */}
-  <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
+          {/* Title */}
+          <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
 
-  {/* Timer */}
-  <div className="flex gap-4 sm:gap-6 items-center mb-4">
-    {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
-      <div key={label} className="text-center">
-        <div className="text-sm text-black">{label}</div>
-        <div className="text-3xl sm:text-4xl font-bold text-black">
-          0{i + 3}
+          {/* Timer */}
+          <div className="flex gap-4 sm:gap-6 items-center mb-4">
+            {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
+              <div key={label} className="text-center">
+                <div className="text-sm text-black">{label}</div>
+                <div className="text-3xl sm:text-4xl font-bold text-black">
+                  0{i + 3}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
-
 
         <div className="flex gap-6">
           {/* Left Arrow */}
@@ -130,13 +120,18 @@ const settings = {
               </div>
 
               {/* Image */}
-              <div className="bg-gray-100 p-4 mb-4 h-60 sm:h-72 md:h-80 flex items-center justify-center rounded">
+              <div className="bg-gray-100 p-4 mb-4 h-60 sm:h-72 md:h-80 flex flex-col items-center justify-center rounded relative">
                 <Link to={`/productDetail/${product.id}`}>
                   <img
                     src={product.image}
                     className="max-h-full object-contain"
                   />
                 </Link>
+
+                {/* Hover Button */}
+                <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                  Add to Cart
+                </button>
               </div>
 
               {/* Text */}

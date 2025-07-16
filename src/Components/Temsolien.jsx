@@ -8,17 +8,17 @@ const Temsolien = () => {
       { title: "Money Back Guarantee", label: "We return money within 30 days", icon: <BsShieldCheck/> },
     ];
   return (
-    <div className="grid md:grid-cols-3 gap-6 text-center py-10">
+    <div className="grid md:grid-cols-3 gap-2 text-center p-10 mb-8">
   {features.map((f, i) => (
-    <div key={i} className="flex flex-col items-center">
+    <div key={i} className="flex flex-col items-center py-6">
       
       <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center mb-4">
         <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center">
           <div className="text-white text-2xl">{f.icon}</div>
         </div>
       </div>
-      <h4 className="font-semibold">{f.title}</h4>
-        <p className="text-sm text-gray-600">{f.label}
+      <h4 className="font-semibold text-2xl">{f.title}</h4>
+        <p className="text-md text-gray-600">{f.label}
           </p>
     </div>
   ))}

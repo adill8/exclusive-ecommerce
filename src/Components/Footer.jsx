@@ -1,10 +1,10 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaArrowAltCircleRight } from "react-icons/fa";
-import { PiArrowArcRightLight, PiArrowBendRightDownDuotone, PiArrowElbowRightLight, PiArrowFatRightBold, PiArrowLineRightThin, PiArrowRight, PiFlowArrowLight } from "react-icons/pi";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {  PiArrowRight } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-6 py-16">
+    <footer className="bg-black text-white px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {/* Column 1 */}
         <div className="px-3">
