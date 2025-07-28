@@ -4,7 +4,7 @@ import {  PiArrowRight } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-6 py-10">
+    <footer className="bg-[#0D0D0D] text-white px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {/* Column 1 */}
         <div className="px-3">
@@ -17,7 +17,7 @@ const Footer = () => {
               placeholder="Enter your email"
               className="text-white p-2 text-sm w-full outline-none"
             />
-            <button className="bg-black text-white px-3 py-1">
+            <button className="bg-[#0D0D0D] text-white px-3 py-1">
                 <PiArrowRight/>
             </button>
           </div>

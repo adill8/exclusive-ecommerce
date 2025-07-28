@@ -81,13 +81,13 @@ const TopProducts = () => {
           </div>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex gap-2">
           {/* Left Arrow */}
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             className="w-10 h-10 bg-gray-100 hover:bg-gray-300 cursor-pointer rounded-full flex items-center justify-center transition"
           >
-            <HiOutlineArrowLeft className="text-xl" />
+            <HiOutlineArrowLeft className="text-xl stroke-[2]" />
           </button>
 
           {/* Right Arrow */}
@@ -95,7 +95,7 @@ const TopProducts = () => {
             onClick={() => sliderRef.current?.slickNext()}
             className="w-10 h-10 bg-gray-100 cursor-pointer hover:bg-gray-300 rounded-full flex items-center justify-center transition"
           >
-            <HiOutlineArrowRight className="text-xl" />
+            <HiOutlineArrowRight className="text-xl stroke-[2]" />
           </button>
         </div>
       </div>
@@ -165,7 +165,7 @@ const TopProducts = () => {
 
       {/* View All Button */}
       <div className="flex justify-center">
-        <button className="bg-red-600 text-white text-lg font-bold py-4 px-10 mt-10 rounded shadow hover:bg-red-700 transition">
+        <button className="bg-[#db4444] text-white cursor-pointer text-lg font-bold py-6 px-18 mt-10 rounded shadow hover:bg-red-700 transition">
           View All Products
         </button>
       </div>

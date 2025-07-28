@@ -12,8 +12,8 @@ const Temsolien = () => {
   {features.map((f, i) => (
     <div key={i} className="flex flex-col items-center py-6">
       
-      <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center mb-4">
-        <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center">
+      <div className="w-20 h-20 rounded-full bg-[#FAFAFA] flex items-center justify-center mb-4">
+        <div className="w-14 h-14 rounded-full bg-[#0D0D0D] flex items-center justify-center">
           <div className="text-white text-2xl">{f.icon}</div>
         </div>
       </div>

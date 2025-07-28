@@ -69,13 +69,13 @@ const settings = {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <p className="text-red-500 font-semibold flex items-center my-4">
+      <p className="text-red-500 font-semibold flex items-center px-2 my-4">
         <span className="w-3 h-6 bg-red-500 mr-2 rounded-sm"></span> Our
         Products
       </p>
 
       {/* Header: Title + Timer + Arrows */}
-      <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
+      <div className="flex items-center justify-between px-2 flex-wrap gap-4 mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
 
         <div className="flex gap-6">
@@ -147,7 +147,7 @@ const settings = {
 
       {/* Button */}
       <div className="flex justify-center">
-        <button className="bg-red-600 text-white text-lg font-bold py-5 px-12 my-10 rounded shadow-lg hover:bg-red-700 transition cursor-pointer">
+        <button className="bg-[#db4444] text-white text-lg font-bold py-6 px-16 my-10 rounded shadow-lg hover:bg-red-700 transition cursor-pointer">
           View All Products
         </button>
       </div>

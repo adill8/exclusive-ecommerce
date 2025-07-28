@@ -3,18 +3,19 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const Banner = () => {
   return (
-    <div className="text-white py-10 px-4 overflow-hidden">
-      <div className="max-w-4xl mx-auto h-auto md:h-[370px] flex flex-col md:flex-row items-center justify-evenly bg-black rounded py-4 px-16">
-
-        {/*  Text Section */}
-        <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
-          <p className="text-green-500 font-semibold text-sm">Categories</p>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">
+    <div className="bg-[#0D0D0D] text-white m-14 px-4 py-6 md:py-8 overflow-hidden">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        {/* Text Section */}
+        <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
+          <p className="text-green-500 font-medium text-sm tracking-wide">Categories</p>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">
             Enhance Your <br className="hidden sm:block" /> Music Experience
           </h1>
 
           {/* Countdown */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 py-3">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
             {[
               { label: "Hours", value: "23" },
               { label: "Days", value: "05" },
@@ -23,30 +24,29 @@ const Banner = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="bg-white text-black w-14 h-14 flex flex-col items-center justify-center rounded-full shadow-md"
+                className="bg-white text-black w-16 h-16 flex flex-col items-center justify-center rounded-full shadow-md"
               >
-                <span className="text-base font-bold">{item.value}</span>
-                <span className="text-[10px]">{item.label}</span>
+                <span className="text-lg font-bold">{item.value}</span>
+                <span className="text-[11px]">{item.label}</span>
               </div>
             ))}
           </div>
 
           {/* Button */}
-          <button className="flex items-center gap-2 mx-auto md:mx-0 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 text-sm rounded-md transition">
+          <button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 px-6 text-sm rounded-md transition mx-auto md:mx-0">
             Buy Now!
-            <HiOutlineArrowNarrowRight className="text-lg" />
+            <HiOutlineArrowNarrowRight className="text-lg font-bold" />
           </button>
         </div>
 
-        {/* img*/}
-        <div className="hidden md:flex w-full md:w-1/2 justify-center">
+        {/* Image */}
+        <div className="w-full md:w-1/2 flex justify-center">
           <img
             src="/images/LoudSpeaker.png"
             alt="Speaker"
-            className="object-contain w-full max-w-sm -scale-x-100"
+            className="object-cover w-full -scale-x-100"
           />
         </div>
-
       </div>
     </div>
   );

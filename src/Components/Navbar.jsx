@@ -7,10 +7,11 @@ import {
   MagnifyingGlassIcon,
   UserIcon
 } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-white border-b border-gray-300 py-3">
+    <Disclosure as="nav" className="bg-white border-b border-gray-300 py-2">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,10 +23,10 @@ const Navbar = () => {
 
               {/* Nav Links */}
               <div className="hidden md:flex space-x-6">
-                <a href="#" className="text-sm font-medium border-b-2 border-black text-gray-900">Home</a>
-                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">Contact</a>
-                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">About</a>
-                <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-700">Sign Up</a>
+                <Link className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Home</Link>
+                <Link className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Contact</Link>
+                <Link className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">About</Link>
+                <Link className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Sign Up</Link>
               </div>
 
               

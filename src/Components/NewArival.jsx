@@ -10,7 +10,7 @@ const NewArival = () => {
       <h2 className="text-3xl font-bold my-6 px-5">New Arrival</h2>
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Section */}
-        <div className="bg-black rounded overflow-hidden flex items-end justify-start relative">
+        <div className="bg-[#0D0D0D] rounded overflow-hidden flex items-end justify-start relative">
           <img
             src="/images/Playstation.png"
             alt="PlayStation 5"
@@ -30,11 +30,11 @@ const NewArival = () => {
         {/* Right Section */}
         <div className="flex flex-col gap-6">
           {/* Top */}
-          <div className="bg-black text-white rounded overflow-hidden relative p-6 flex flex-col justify-end min-h-[230px] md:min-h-[320px]">
+          <div className="bg-[#0D0D0D] text-white rounded overflow-hidden relative p-6 flex flex-col justify-end min-h-[230px] md:min-h-[320px]">
             <img
               src="/images/girl.jpg"
               alt="Women's Collection"
-              className="absolute w-full h-76 opacity-25 object-contain -scale-x-100"
+              className="absolute w-full h-76 object-contain -scale-x-100"
             />
             <div className="relative z-10 w-54">
               <h3 className="text-xl font-semibold py-2">
@@ -51,7 +51,7 @@ const NewArival = () => {
 
           {/* Bottom */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-black rounded overflow-hidden relative">
+            <div className="bg-[#0D0D0D] rounded overflow-hidden relative">
               <img
                 src="/images/Wirless Speaker.png"
                 alt="Alexa"
@@ -69,7 +69,7 @@ const NewArival = () => {
               </div>
             </div>
 
-            <div className="bg-black rounded overflow-hidden relative">
+            <div className="bg-[#0D0D0D] rounded overflow-hidden relative">
               <img
                 src="/images/Perfume.png"
                 alt="Gucci Perfume"
