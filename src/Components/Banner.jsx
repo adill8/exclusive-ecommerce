@@ -3,7 +3,7 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const Banner = () => {
   return (
-    <div className="bg-[#0D0D0D] text-white m-14 px-4 py-6 md:py-8 overflow-hidden">
+    <div className="bg-[#0D0D0D] text-white m-14 px-4 py-2 md:py-4 overflow-hidden">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Text Section */}
@@ -40,13 +40,14 @@ const Banner = () => {
         </div>
 
         {/* Image */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/LoudSpeaker.png"
-            alt="Speaker"
-            className="object-cover w-full -scale-x-100"
-          />
-        </div>
+      <div className="w-full md:w-1/2 flex justify-center bg-transparent">
+  <img
+    src="/images/LoudSpeaker.png"
+    alt="Speaker"
+    className="object-cover w-full -scale-x-100 shadow-lg shadow-gray-700"
+  />
+</div>
+
       </div>
     </div>
   );

@@ -69,13 +69,16 @@ const TopProducts = () => {
           <h2 className="text-2xl sm:text-3xl font-bold">Flash Sales</h2>
 
           {/* Timer */}
-          <div className="flex gap-4 sm:gap-6 items-center mb-4">
+          <div className="flex gap-2 sm:gap-4 items-center mb-4">
             {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
-              <div key={label} className="text-center">
-                <div className="text-sm text-black">{label}</div>
-                <div className="text-3xl sm:text-4xl font-bold text-black">
-                  0{i + 3}
+              <div key={label} className="flex items-center">
+                <div className="text-center">
+                  <div className="text-sm text-black">{label}</div>
+                  <div className="flex items-center text-3xl sm:text-4xl font-bold text-black">
+                    0{i + 3}
+                  </div>
                 </div>
+                {i < 3 && <span className="text-4xl ml-4 text-red-600">:</span>}
               </div>
             ))}
           </div>

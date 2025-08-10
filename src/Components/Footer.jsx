@@ -1,9 +1,13 @@
 import React from "react";
+import { BiSolidCopyright } from "react-icons/bi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa6";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
 import {  PiArrowRight } from "react-icons/pi";
 
 const Footer = () => {
   return (
+    <>
     <footer className="bg-[#0D0D0D] text-white px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {/* Column 1 */}
@@ -15,10 +19,10 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="text-white p-2 text-sm w-full outline-none"
+              className="text-gray-100 p-2 text-sm w-full outline-none"
             />
             <button className="bg-[#0D0D0D] text-white px-3 py-1">
-                <PiArrowRight/>
+                <FaAngleRight/>
             </button>
           </div>
         </div>
@@ -78,12 +82,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-        © Copyright Rimel 2022. All rights reserved
-      </div>
     </footer>
+       {/* Bottom */}
+     <div className="border-t py-6 text-sm bg-[#0D0D0D] text-gray-600 flex items-center justify-center gap-2">
+  <BiSolidCopyright />
+  <span>Copyright Rimel 2022. All rights reserved</span>
+</div>
+
+      </>
   );
 };
 

@@ -16,12 +16,12 @@ const NewArival = () => {
             alt="PlayStation 5"
             className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-4 left-2 text-white w-60 pb-4">
-            <h1 className="text-xl font-semibold py-2">Playstation 5</h1>
+          <div className="absolute bottom-10 left-6 text-white w-60">
+            <h1 className="text-3xl font-semibold py-4">PlayStation 5</h1>
             <p className="text-sm text-gray-200 py-2">
               Black and White version of the PS5 coming out on sale.
             </p>
-            <button className="pt-2 border-b font-medium border-gray-700">
+            <button className="pt-2 border-b font-medium border-gray-200">
               Shop Now
             </button>
           </div>
@@ -30,20 +30,20 @@ const NewArival = () => {
         {/* Right Section */}
         <div className="flex flex-col gap-6">
           {/* Top */}
-          <div className="bg-[#0D0D0D] text-white rounded overflow-hidden relative p-6 flex flex-col justify-end min-h-[230px] md:min-h-[320px]">
+          <div className="bg-[#0D0D0D] text-white rounded overflow-hidden relative px-6 flex flex-col justify-end min-h-[230px] md:min-h-[320px]">
             <img
               src="/images/girl.jpg"
               alt="Women's Collection"
               className="absolute w-full h-76 object-contain -scale-x-100"
             />
-            <div className="relative z-10 w-54">
-              <h3 className="text-xl font-semibold py-2">
+            <div className="relative z-10 w-62 py-6">
+              <h3 className="text-2xl font-semibold py-2">
                 Women’s Collections
               </h3>
-              <p className="text-sm text-gray-200 py-2">
+              <p className="text-md text-gray-200 py-2">
                 Featured woman collections that give you another vibe.
               </p>
-              <button className="pt-2 border-b font-medium border-gray-700">
+              <button className="pt-2 border-b font-medium border-gray-200">
                 Shop Now
               </button>
             </div>
@@ -59,11 +59,11 @@ const NewArival = () => {
               />
 
               <div className="absolute bottom-4 left-4 text-white w-60 pb-4">
-                <h1 className="text-xl font-semibold">Speakers</h1>
-                <p className="text-sm text-gray-200">
+                <h1 className="text-2xl font-semibold">Speakers</h1>
+                <p className="text-md text-gray-200">
                   Amazon wireless speakers
                 </p>
-                <button className="pt-2 border-b font-medium border-gray-700">
+                <button className="pt-2 border-b font-medium border-gray-200">
                   Shop Now
                 </button>
               </div>
@@ -75,10 +75,10 @@ const NewArival = () => {
                 alt="Gucci Perfume"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-4 left-4 text-white w-60 py-4 mb-8">
-                <h1 className="text-xl font-semibold py-1">Perfume</h1>
+              <div className="absolute bottom-4 left-4 text-white w-60 mb-4">
+                <h1 className="text-2xl font-semibold py-1">Perfume</h1>
                 <p className="text-xs text-gray-200">GUCCI INTENSE OUD EDP</p>
-                <button className="pt-2 border-b font-medium border-gray-700">
+                <button className="pt-2 border-b font-medium border-gray-200">
                   Shop Now
                 </button>
               </div>
