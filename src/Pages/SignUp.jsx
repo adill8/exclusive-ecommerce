@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
-    <div className="md:flex px-6 py-16 gap-8">
+    <div className="md:flex my-16 pb-8 gap-6">
       {/* Left Image */}
  <div className="md:w-1/2 w-full">
   <img
     src="/images/Login-Pic.jpg"
     alt="Login"
-    className="w-full sm:h-80 md:h-90 lg:h-[700px] object-cover rounded"
+    className="w-full sm:h-80 md:h-90 lg:h-[600px] object-cover rounded"
   />
 </div>
 

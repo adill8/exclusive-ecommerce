@@ -6,7 +6,7 @@ import { FaDollarSign, FaSackDollar, FaTruckMoving, } from "react-icons/fa6";
 const AboutUs = () => {
  const stats = [
   { icon: <BsShop/>, label: "Sellers Active Our Site", value: "10.5k" },
-  { icon: <FaDollarSign/>, label: "Monthly Product Sale", value: "33k", highlight: true },
+  { icon: <FaDollarSign/>, label: "Monthly Product Sale", value: "33k" },
   { icon: <BsBag />, label: "Customer Active Our Site", value: "45.5k" },
   { icon: <FaSackDollar/>, label: "Anual gross sale in our site", value: "25k" },
 ];
@@ -52,16 +52,13 @@ const AboutUs = () => {
   {stats.map((item, i) => (
     <div
       key={i}
-      className={`p-4 border rounded-lg ${
-        item.highlight ? "bg-red-500 text-white" : "bg-white text-black"
-      }`}
+      className={"p-4 border rounded-lg hover:bg-red-500 bg-white text-black"
+      }
     >
       <div className="flex justify-center mb-4">
         <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center">
           <div
-            className={`w-14 h-14 rounded-full flex items-center justify-center ${
-              item.highlight ? "bg-white text-black" : "bg-black text-white"
-            }`}
+            className={"w-14 h-14 rounded-full flex items-center justify-center"}
           >
             <div className="text-2xl">
               {item.icon}
