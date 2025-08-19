@@ -41,10 +41,11 @@ const Banner = () => {
 
         {/* Image */}
       <div className="w-full md:w-1/2 flex justify-center bg-transparent">
-  <img
+ <img
     src="/images/LoudSpeaker.png"
     alt="Speaker"
-    className="object-cover w-full -scale-x-100 shadow-lg shadow-gray-700"
+    className="object-cover w-full -scale-x-100"
+    style={{ background: "radial-gradient(circle, rgba(217, 217, 217, 0.20) 0%, rgba(13, 13, 13, 1) 65%)" }}
   />
 </div>
 

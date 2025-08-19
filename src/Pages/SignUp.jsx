@@ -1,38 +1,39 @@
 import React from "react";
-import { SiGoogle } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row px-6 py-10 md:py-0">
-      {/* Image */}
-      <div className="hidden md:flex flex-1 p-6">
-        <img
-          src="/images/Login-Pic.jpg"
-          alt="Login"
-          className=" w-full h-full"
-        />
-      </div>
+    <div className="md:flex px-6 py-16 gap-8">
+      {/* Left Image */}
+ <div className="md:w-1/2 w-full">
+  <img
+    src="/images/Login-Pic.jpg"
+    alt="Login"
+    className="w-full sm:h-80 md:h-90 lg:h-[700px] object-cover rounded"
+  />
+</div>
 
-      {/* Form */}
-      <div className="flex flex-1 items-center justify-center">
+
+      {/* Right Form */}
+      <div className="md:w-1/2 flex justify-center mt-10 md:mt-32">
         <div className="w-full max-w-md">
-          <h2 className="text-2xl font-semibold mb-2">Create an account</h2>
-          <p className="text-gray-500 text-sm mb-6">Enter your details below</p>
+          <h2 className="text-4xl font-semibold mb-2">Create an account</h2>
+          <p className="text-sm mb-6">Enter your details below</p>
           <form className="flex flex-col gap-4">
             <input
               type="text"
               placeholder="Name"
-              className="border-b py-2 focus:outline-none"
+              className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <input
               type="text"
               placeholder="Email or Phone Number"
-              className="border-b py-2 focus:outline-none"
+              className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <input
               type="password"
               placeholder="Password"
-              className="border-b py-2 focus:outline-none"
+              className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <div className="flex flex-col items-center justify-between mt-4">
               <button
@@ -45,18 +46,17 @@ const SignUp = () => {
                 type="button"
                 className="text-sm border my-3 w-full py-3 rounded border-gray-300 flex items-center justify-center gap-2"
               >
-                <SiGoogle className="text-lg" />
+                <img src="/images/google.png" />
                 <span className="text-sm">Sign up with Google</span>
               </button>
-
-              <span className="text-sm text-slate-700 mt-2">
-                Already have an account?{" "}
-                <a
-                  href="/login"
+              <span className="text-sm text-slate-700 mt-2 flex items-center gap-2">
+                <span>Already have an account?</span>
+                <Link
+                  to="/login"
                   className="text-slate-600 font-bold border-b py-1"
                 >
                   Login
-                </a>
+                </Link>
               </span>
             </div>
           </form>
