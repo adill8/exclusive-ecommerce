@@ -9,32 +9,34 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6">
          {/* Contact Info */}
- <div className="md:col-span-4 space-y-6 p-6 bg-white rounded-lg shadow-lg border border-gray-200">
+ <div className="md:col-span-4 space-y-6 px-6 py-10 bg-white rounded-lg shadow-lg border border-gray-200">
   {/* Call Us */}
+  <div className="flex-col items-start">
   <div className="flex items-start gap-4">
-    <div className="w-10 h-10 flex items-center justify-center bg-red-600 text-white rounded-full text-xl font-bold">
-     <BiPhone/>
+    <div className="w-10 h-10 flex items-center justify-center bg-[#DB4444] text-white rounded-full text-xl font-bold">
+     <BiPhone className="text-2xl"/>
     </div>
-    <div>
-      <h3 className="font-semibold text-lg">Call To Us</h3>
-      <p className="text-sm">We are available 24/7, 7 days a week.</p>
-      <p className="text-sm font-medium mt-2">Phone: +8801611112222</p>
+    <h3 className="font-semibold text-lg my-2">Call To Us</h3>
     </div>
+      <p className="text-md font-sans py-4">We are available 24/7, 7 days a week.</p>
+      <p className="text-md font-sans">Phone: +8801611112222</p>
   </div>
 
-  <hr />
+ <hr className=""/>
 
   {/* Write */}
+  <div className="flex-col items-start">
   <div className="flex items-start gap-4">
-    <div className="w-12 h-10 flex items-center justify-center bg-red-600 text-white rounded-full text-xl font-bold">
-      <BiEnvelope/>
+    <div className="w-10 h-10 flex items-center justify-center bg-[#DB4444] text-white rounded-full text-xl font-bold">
+      <BiEnvelope className="text-2xl"/>
     </div>
-    <div>
-      <h3 className="font-semibold text-lg">Write To Us</h3>
-      <p className="text-sm">Fill out our form and we will contact you within 24 hours.</p>
-      <p className="text-sm font-medium mt-2">Email: customer@exclusive.com</p>
-      <p className="text-sm font-medium">Email: support@exclusive.com</p>
+    <h3 className="font-semibold text-lg my-2">Write To Us</h3>
     </div>
+      <div className="lg:w-70">
+      <p className="text-md font-medium py-4">Fill out our form and we will contact you within 24 hours.</p>
+      <p className="text-md font-sans">Email: customer@exclusive.com</p>
+      <p className="text-md font-sans py-2">Email: support@exclusive.com</p>
+      </div>
   </div>
 </div>
 
@@ -68,7 +70,7 @@ const Contact = () => {
 <div className="flex justify-end">
   <button
     type="submit"
-    className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded"
+    className="bg-[#DB4444] hover:bg-red-700 text-white px-6 py-2 rounded"
   >
     Send Message
   </button>
