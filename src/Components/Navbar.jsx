@@ -39,9 +39,9 @@ const Navbar = () => {
                   />
                   <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 absolute right-1 top-2" />
                 </div>
-                <HeartIcon className="h-6 w-6 text-black cursor-pointer" />
-                <ShoppingCartIcon className="h-6 w-6 text-black cursor-pointer" />
-                <UserIcon className="h-6 w-6 text-black cursor-pointer" />
+                <img src='/images/wishlist.png' className="h-6 w-6 text-black cursor-pointer" />
+                <img src='/images/cart.png' className="h-6 w-6 text-black cursor-pointer" />
+                <img src='/images/person-icon.png' className="h-6 w-6 text-black cursor-pointer" />
               </div>
 
               {/* Mobile Menu Button */}
@@ -86,9 +86,9 @@ const Navbar = () => {
 
             {/* Mobile: Icons */}
             <div className="flex items-center gap-4 pt-2">
-              <HeartIcon className="h-6 w-6 text-black cursor-pointer" />
-              <ShoppingCartIcon className="h-6 w-6 text-black cursor-pointer" />
-              <UserIcon className="h-6 w-6 text-black cursor-pointer" />
+              <img src='/images/wishlist.png' className="h-6 w-6 text-black cursor-pointer" />
+              <img src='/images/cart.png' className="h-6 w-6 text-black cursor-pointer" />
+              <img src='/images/person-icon.png' className="h-6 w-6 text-black cursor-pointer" />
             </div>
           </Disclosure.Panel>
         </>

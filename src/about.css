@@ -1,0 +1,49 @@
+/* About Dots wrapper */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  position: relative;
+}
+.slick-dots li button {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slick-dots li {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #b1b1b3;
+  position: relative;
+}
+
+.slick-dots li.slick-active {
+  background: #b1b1b3;
+}
+
+.slick-dots li.slick-active::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slick-dots li.slick-active::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #db4444;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
