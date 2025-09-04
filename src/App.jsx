@@ -14,6 +14,7 @@ import ProductDetail from './Components/ProductDetail';
 import PageError from './Pages/PageError';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Whishlist from './Pages/Whishlist';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Route path='/contact' element ={<Contact/>}/>
         <Route path='/productDetail/:id' element ={<ProductDetail/>}/>
         <Route path='/pageError' element ={<PageError/>}/>
+        <Route path='/whishlist' element ={<Whishlist/>}/>
         
         
 

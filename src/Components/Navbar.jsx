@@ -1,13 +1,10 @@
-import { Disclosure } from '@headlessui/react'
+import { Disclosure } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
-  HeartIcon,
-  ShoppingCartIcon,
   MagnifyingGlassIcon,
-  UserIcon
-} from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom';
+} from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -23,13 +20,32 @@ const Navbar = () => {
 
               {/* Nav Links */}
               <div className="hidden md:flex space-x-6">
-                <Link to={'/'} className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Home</Link>
-                <Link to={'/contact'} className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Contact</Link>
-                <Link to={'/aboutUs'} className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">About</Link>
-                <Link to={'/signUp'} className="text-sm font-medium hover:border-b border-gray-300 text-gray-900">Sign Up</Link>
+                <Link
+                  to={"/"}
+                  className="text-sm font-medium hover:border-b border-gray-300 text-gray-900"
+                >
+                  Home
+                </Link>
+                <Link
+                  to={"/contact"}
+                  className="text-sm font-medium hover:border-b border-gray-300 text-gray-900"
+                >
+                  Contact
+                </Link>
+                <Link
+                  to={"/aboutUs"}
+                  className="text-sm font-medium hover:border-b border-gray-300 text-gray-900"
+                >
+                  About
+                </Link>
+                <Link
+                  to={"/signUp"}
+                  className="text-sm font-medium hover:border-b border-gray-300 text-gray-900"
+                >
+                  Sign Up
+                </Link>
               </div>
 
-              
               <div className="hidden md:flex items-center gap-3">
                 <div className="relative w-50">
                   <input
@@ -39,9 +55,20 @@ const Navbar = () => {
                   />
                   <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 absolute right-1 top-2" />
                 </div>
-                <img src='/images/wishlist.png' className="h-6 w-6 text-black cursor-pointer" />
-                <img src='/images/cart.png' className="h-6 w-6 text-black cursor-pointer" />
-                <img src='/images/person-icon.png' className="h-6 w-6 text-black cursor-pointer" />
+                <Link to={'/whishlist'}>
+                  <img
+                    src="/images/wishlist.png"
+                    className="h-6 w-6 text-black cursor-pointer"
+                  />
+                </Link>
+                <img
+                  src="/images/cart.png"
+                  className="h-6 w-6 text-black cursor-pointer"
+                />
+                <img
+                  src="/images/person-icon.png"
+                  className="h-6 w-6 text-black cursor-pointer"
+                />
               </div>
 
               {/* Mobile Menu Button */}
@@ -61,16 +88,32 @@ const Navbar = () => {
           {/* Mobile Dropdown Menu */}
           <Disclosure.Panel className="md:hidden px-4 pt-2 pb-4 space-y-3">
             {/* Nav Links */}
-            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+            <Disclosure.Button
+              as="a"
+              href="#"
+              className="block text-base font-medium text-gray-700"
+            >
               Home
             </Disclosure.Button>
-            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+            <Disclosure.Button
+              as="a"
+              href="#"
+              className="block text-base font-medium text-gray-700"
+            >
               Contact
             </Disclosure.Button>
-            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+            <Disclosure.Button
+              as="a"
+              href="#"
+              className="block text-base font-medium text-gray-700"
+            >
               About
             </Disclosure.Button>
-            <Disclosure.Button as="a" href="#" className="block text-base font-medium text-gray-700">
+            <Disclosure.Button
+              as="a"
+              href="#"
+              className="block text-base font-medium text-gray-700"
+            >
               Sign Up
             </Disclosure.Button>
 
@@ -86,15 +129,24 @@ const Navbar = () => {
 
             {/* Mobile: Icons */}
             <div className="flex items-center gap-4 pt-2">
-              <img src='/images/wishlist.png' className="h-6 w-6 text-black cursor-pointer" />
-              <img src='/images/cart.png' className="h-6 w-6 text-black cursor-pointer" />
-              <img src='/images/person-icon.png' className="h-6 w-6 text-black cursor-pointer" />
+              <img
+                src="/images/wishlist.png"
+                className="h-6 w-6 text-black cursor-pointer"
+              />
+              <img
+                src="/images/cart.png"
+                className="h-6 w-6 text-black cursor-pointer"
+              />
+              <img
+                src="/images/person-icon.png"
+                className="h-6 w-6 text-black cursor-pointer"
+              />
             </div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
-}
+  );
+};
 
 export default Navbar;
