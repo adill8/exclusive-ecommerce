@@ -61,14 +61,18 @@ const Navbar = () => {
                     className="h-6 w-6 text-black cursor-pointer"
                   />
                 </Link>
+                <Link to={'/cart'}>
                 <img
                   src="/images/cart.png"
                   className="h-6 w-6 text-black cursor-pointer"
                 />
+                </Link>
+                <Link to={'/accountProfile'}>
                 <img
                   src="/images/person-icon.png"
                   className="h-6 w-6 text-black cursor-pointer"
                 />
+                </Link>
               </div>
 
               {/* Mobile Menu Button */}
