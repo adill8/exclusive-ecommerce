@@ -1,5 +1,4 @@
 import React from "react";
-import { PiCameraLight, PiDesktopLight, PiDeviceMobileLight, PiGameControllerLight, PiHeadphonesLight, PiWatchLight } from "react-icons/pi";
 
 const CategoryBrowser = () => {
   return (
@@ -12,41 +11,65 @@ const CategoryBrowser = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {/* Phones */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiDeviceMobileLight className=" text-6xl mb-2" />
+          <img
+            src="/images/cellphone.png"
+            alt="Phones"
+            className="w-16 h-16 mb-2 object-contain"
+          />
           <span className="text-sm font-medium">Phones</span>
         </div>
 
         {/* Computers */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiDesktopLight className="text-6xl mb-2" />
+          <img
+            src="/images/computer.png"
+            alt="computer"
+            className="w-16 h-16 object-contain"
+          />
           <span className="text-sm font-medium">Computers</span>
         </div>
 
         {/* SmartWatch */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiWatchLight className="text-6xl mb-2" />
+          <img
+            src="/images/watch.png"
+            alt="watch"
+            className="w-16 h-16 object-contain"
+          />
           <span className="text-sm font-medium">SmartWatch</span>
         </div>
 
         {/* Camera */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiCameraLight className="text-6xl mb-2" />
+          <img
+            src="/images/camera.png"
+            alt="camera"
+            className="w-16 h-16 object-contain"
+          />
           <span className="text-sm font-medium">Camera</span>
         </div>
 
         {/* HeadPhones */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiHeadphonesLight className="text-6xl mb-2" />
+          <img
+            src="/images/headphone.png"
+            alt="headphone"
+            className="w-16 h-16 object-contain"
+          />
           <span className="text-sm font-medium">HeadPhones</span>
         </div>
 
         {/* Gaming */}
         <div className="flex flex-col items-center justify-center h-32 cursor-pointer border rounded-md text-black hover:text-white hover:bg-[#db4444] transition">
-          <PiGameControllerLight className="text-6xl mb-2" />
+          <img
+            src="/images/gamepad.png"
+            alt="headphone"
+            className="w-16 h-16 object-contain"
+          />
           <span className="text-sm font-medium">Gaming</span>
         </div>
       </div>
-       {/* Line */}
+      {/* Line */}
       <hr className="border-t border-gray-300 my-18" />
     </div>
   );

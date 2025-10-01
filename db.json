@@ -1,0 +1,176 @@
+{
+   
+  "flashProducts": [
+    {
+      "id": 1,
+      "title": "HAVIT HV-G92 Gamepad",
+      "price": 120,
+      "oldPrice": 160,
+      "discount": 40,
+      "description": "High quality PS5 controller skin with air-channel adhesive for smooth installation and mess-free removal. Durable and pressure-sensitive grip.",
+      "image": "/images/Gaming Mouse.png",
+      "rating": 4.5,
+      "reviews": 88
+    },
+    {
+      "id": 2,
+      "title": "AK-900 Wired Keyboard",
+      "price": 960,
+      "oldPrice": 1160,
+      "discount": 35,
+      "description": "Ergonomic wired keyboard with smooth key response and LED backlight. Built for long typing sessions and gaming efficiency.",
+      "image": "/images/Keyboard.png",
+      "rating": 4.7,
+      "reviews": 75
+    },
+    {
+      "id": 3,
+      "title": "IPS LCD Gaming Monitor",
+      "price": 370,
+      "oldPrice": 400,
+      "discount": 30,
+      "description": "Full HD IPS display with ultra-slim design. Offers smooth refresh rate, vibrant visuals, and minimal eye strain support.",
+      "image": "/images/LCD.png",
+      "rating": 4.8,
+      "reviews": 99
+    },
+    {
+      "id": 4,
+      "title": "S-Series Comfort Chair",
+      "price": 375,
+      "oldPrice": 400,
+      "discount": 25,
+      "description": "Adjustable ergonomic chair designed for gaming and work comfort. Cushioned support with durable wheels and breathable mesh back.",
+      "image": "/images/Chair.png",
+      "rating": 4.6,
+      "reviews": 99
+    }
+  ],
+
+  "sellingProducts": [
+        {
+      "id": 5,
+      "title": "The north Coat",
+      "price": 260,
+      "oldPrice": 360,
+      "discount": 40,
+      "image": "/images/Coat.png",
+      "rating": 4.5,
+      "reviews": 88,
+      "description": "Warm and durable coat designed for extreme weather. Stylish, lightweight, and insulated to keep you comfortable all winter."
+    },
+    {
+      "id": 6,
+      "title": "Gucci duffle bag",
+      "price": 960,
+      "oldPrice": 1160,
+      "discount": 35,
+      "image": "/images/Hand Bag.png",
+      "rating": 4.7,
+      "reviews": 75,
+      "description": "Premium Gucci duffle bag with spacious interior and luxury design. Ideal for travel, gym, or stylish daily use."
+    },
+    {
+      "id": 7,
+      "title": "RGB liquid CPU cooler",
+      "price": 160,
+      "oldPrice": 170,
+      "discount": 30,
+      "image": "/images/Speaker.png",
+      "rating": 4.8,
+      "reviews": 99,
+      "description": "Efficient liquid CPU cooler with RGB lighting. Maintains optimal temperatures for high-performance systems with quiet fan operation."
+    },
+    {
+      "id": 8,
+      "title": "Small BookShelf",
+      "price": 360,
+      "oldPrice": 450,
+      "discount": 25,
+      "image": "/images/Book Self.png",
+      "rating": 4.6,
+      "reviews": 99,
+      "description": "Compact bookshelf with modern design. Perfect for small spaces to organize books, decor, or daily essentials neatly and stylishly."
+    }
+  ],
+  "ourProducts": [
+    {
+      "id": 9,
+      "title": "Breed Dry Dog food",
+      "price": 100,
+      "image": "/images/Doog Food.jpg",
+      "rating": 4.5,
+      "reviews": 35,
+      "description": "A nutritious and balanced dry food specially formulated for all dog breeds. Supports healthy digestion, strong bones, and a shiny coat. Ideal for daily feeding."
+    },
+    {
+      "id": 10,
+      "title": "Kids Electric Car",
+      "price": 960,
+      "image": "/images/Kids Car.png",
+      "rating": 4.6,
+      "reviews": 145,
+      "tag": "NEW",
+      "description": "Fun electric ride-on car for kids with working lights, sounds, and safety features. Easy controls ensure a joyful drive.",
+      "colors": ["#FB1314", "#DB4444"]
+    },
+     {
+    "id": 11,
+      "title": "Canon EOS DSLR Camera",
+      "price": 360,
+      "image": "/images/DSLR Camera.png",
+      "rating": 4.7,
+      "reviews": 95,
+      "description": "Capture stunning shots with this high-resolution DSLR camera. Features fast autofocus, vivid color capture, and user-friendly controls."
+    },
+    {
+      "id": 12,
+      "title": "Jr. Zoom Soccer Cleats",
+      "price": 1160,
+      "image": "/images/Soccer Cleats.png",
+      "rating": 4.6,
+      "reviews": 35,
+      "description": "Lightweight soccer cleats built for speed and grip. Perfect fit for juniors seeking comfort, control, and field-ready performance.",
+      "colors": ["#EEFF61", "#DB4444"]
+    },
+    {
+      "id": 13,
+      "title": "ASUS FHD Gaming Laptop",
+      "price": 700,
+      "image": "/images/Leptop.png",
+      "rating": 4.8,
+      "reviews": 325,
+      "description": "Powerful gaming laptop with FHD display and fast processor. Offers seamless performance, vibrant graphics, and extended battery life."
+    },
+    {
+      "id": 14,
+      "title": "GP11 Shooter USB GamePad",
+      "price": 660,
+      "image": "/images/Game Pad.png",
+      "rating": 4.6,
+      "reviews": 145,
+      "tag": "NEW",
+      "description": "USB gamepad with vibration feedback and precision buttons. Ideal for shooter games, it provides ultimate control and smooth gameplay.",
+      "colors": ["#3b3636", "#DB4444"]
+    },
+     {
+      "id": 15,
+      "title": "Curology Product Set",
+      "price": 500,
+      "image": "/images/Product Set.png",
+      "rating": 4.6,
+      "reviews": 145,
+      "description": "Complete skincare set for clearer skin. Includes cleanser, custom formula, and moisturizer. Dermatologist-developed and cruelty-free for daily use."
+    },
+    {
+      "id": 16,
+      "title": "Quilted Stain Jacket",
+      "price": 660,
+      "image": "/images/Jacket.png",
+      "rating": 4.6,
+      "reviews": 145,
+      "description": "Stylish quilted jacket with stain-resistant fabric. Comfortable, lightweight, and warm—perfect for winter outings and everyday urban wear.",
+      "colors": ["#184A48", "#DB4444"]
+    }
+  ]
+}

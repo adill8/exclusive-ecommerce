@@ -7,25 +7,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
 import Slider from "react-slick";
+import axios from "axios";
 
 const OurProducts = () => {
-  const [explorProducts] = useState(() => {
-    const stored = localStorage.getItem("explorOurProducts");
-
-    if (stored) {
-      return JSON.parse(stored);
-    }
-    return ourProducts;
-  });
+  const sliderRef = useRef(null);
+  const [ourProducts, setOurProducts] = useState([]);
 
   useEffect(() => {
-    const existing = localStorage.getItem("explorOurProducts");
-
-    if (!existing || JSON.parse(existing).length === 0) {
-      localStorage.setItem("explorOurProducts", JSON.stringify(ourProducts));
-    }
-  }, []);
-  const sliderRef = useRef(null);
+    axios.get("http://localhost:5000/ourProducts")
+    .then((res) => setOurProducts(res.data))
+    .catch((err) => console.error("Error fetching products:" , err))
+  },[]);
 
   const settings = {
     infinite: true,

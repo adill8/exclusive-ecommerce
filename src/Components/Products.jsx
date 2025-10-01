@@ -3,23 +3,17 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { PiEyeLight, PiHeartLight } from 'react-icons/pi';
 import { sellingProducts } from '../Data/SellingProductsData';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Products = () => {
-  const [productSell] = useState(()=>{
-    const stored = localStorage.getItem('sellProducts');
+  const [sellProducts, setSellProducts] = useState([]);
 
-    if (stored) {
-      return JSON.parse(stored);
-    }
-    return sellingProducts;
-  });
-
-  useEffect(()=>{
-    const existing = localStorage.getItem('sellProducts');
-    if (!existing || JSON.parse(existing).length === 0) {
-      localStorage.setItem('sellProducts', JSON.stringify(sellingProducts));
-    }
+  useEffect(() => {
+    axios.get("http://localhost:5000/sellingProducts")
+    .then((res) => setSellProducts(res.data))
+    .catch((err) => console.log("Error fetching products:", err))
   },[]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-2">
        <p className="text-red-500 font-semibold flex items-center mb-2">
@@ -34,7 +28,7 @@ const Products = () => {
 
       {/* Product */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 cursor-pointer">
-        {productSell.map((product) => (
+        {sellProducts.map((product) => (
           <div
             key={product.id}
             className="relative group overflow-hidden min-h-[350px] w-full"

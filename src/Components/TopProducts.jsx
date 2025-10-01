@@ -7,21 +7,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
+import axios from "axios";
 
 const TopProducts = () => {
   const sliderRef = useRef(null);
 
-  const [flashSale] = useState(() => {
-    const stored = localStorage.getItem("flashSaleProducts");
-    return stored ? JSON.parse(stored) : products;
-  });
+const [flashProducts, setFlashProducts] = useState([]);
 
-  useEffect(() => {
-    const existing = localStorage.getItem("flashSaleProducts");
-    if (!existing || JSON.parse(existing).length === 0) {
-      localStorage.setItem("flashSaleProducts", JSON.stringify(products));
-    }
-  }, []);
+useEffect(()=>{
+  axios.get("http://localhost:5000/flashProducts").then((res)=> setFlashProducts(res.data))
+  .catch((err) => console.error("Error fetching products:", err))
+},[]);
 
   const settings = {
     dots: false,
@@ -106,7 +102,7 @@ const TopProducts = () => {
       {/* Product Slider */}
       <div className="overflow-hidden -mr-4">
         <Slider ref={sliderRef} {...settings} className="pr-4">
-          {flashSale.map((product) => (
+          {flashProducts.map((product) => (
             <div
               key={product.id}
               className="relative group overflow-hidden min-h-[350px] w-full px-1"
@@ -123,7 +119,7 @@ const TopProducts = () => {
               </div>
 
               {/* Image */}
-              <div className="bg-gray-100 p-4 mb-4 h-60 sm:h-72 md:h-80 flex flex-col items-center justify-center rounded relative">
+              <div className="bg-gray-100 p-4 mb-4 h-70 sm:h-82 md:h-90 flex flex-col items-center justify-center rounded relative">
                 <Link to={`/productDetail/${product.id}`}>
                   <img
                     src={product.image}
@@ -132,9 +128,11 @@ const TopProducts = () => {
                 </Link>
 
                 {/* Hover Button */}
-                <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                <Link to={'/cart'}>
+                <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer">
                   Add to Cart
                 </button>
+                </Link>
               </div>
 
               {/* Text */}
