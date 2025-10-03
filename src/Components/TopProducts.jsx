@@ -8,16 +8,40 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const TopProducts = () => {
   const sliderRef = useRef(null);
 
-const [flashProducts, setFlashProducts] = useState([]);
+  const [flashProducts, setFlashProducts] = useState([]);
 
-useEffect(()=>{
-  axios.get("http://localhost:5000/flashProducts").then((res)=> setFlashProducts(res.data))
-  .catch((err) => console.error("Error fetching products:", err))
-},[]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/flashProducts")
+      .then((res) => setFlashProducts(res.data))
+      .catch((err) => console.error("Error fetching products:", err));
+  }, []);
+
+  const handleAddToCart = async(product) =>{
+    try {
+      const res = await axios.get(`http://localhost:5000/cart?id=${product.id}`);
+      if (res.data.length > 0) {
+        const existingItem = res.data[0];
+        await axios.patch(`http://localhost:5000/cart/${product.id}`,{
+          quantity: existingItem + 1
+        });
+      }else{
+        await axios.post("http://localhost:5000/cart" , {
+          ...product,
+          quantity: 1,
+        });
+      }
+      toast.success(`${product.title} Add Cart Successfully!`);
+      
+    } catch (error) {
+      console.error("Error adding to cart", error);
+    }
+  }
 
   const settings = {
     dots: false,
@@ -128,11 +152,15 @@ useEffect(()=>{
                 </Link>
 
                 {/* Hover Button */}
-                <Link to={'/cart'}>
-                <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer">
+
+                <button
+                  onClick={() => {
+                    handleAddToCart(product);
+                  }}
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer"
+                >
                   Add to Cart
                 </button>
-                </Link>
               </div>
 
               {/* Text */}

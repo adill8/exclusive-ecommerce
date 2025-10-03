@@ -1,7 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
+  const [ email, setEmail] = useState("");
+  const [password, setPasword] = useState("");
+
+  const handleSignUp = async(e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/register", {
+        name,
+        email,
+        password
+      });
+      console.log("User Registered:", res.data);
+      toast.success("Account created successfully");
+    } catch (error) {
+      console.error("Error in signUp:", error);
+      toast.error("signUp failed, try again!");
+    };
+  }
   return (
     <div className="md:flex my-16 pb-8 gap-6">
       {/* Left Image */}
@@ -19,26 +40,32 @@ const SignUp = () => {
         <div className="w-full max-w-md">
           <h2 className="text-4xl font-semibold mb-2">Create an account</h2>
           <p className="text-sm mb-6">Enter your details below</p>
-          <form className="flex flex-col gap-4">
+          <form onSubmit={handleSignUp} className="flex flex-col gap-4">
             <input
               type="text"
               placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <input
               type="text"
               placeholder="Email or Phone Number"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPasword(e.target.value)}
               className="border-b border-gray-400 py-2 focus:outline-none"
             />
             <div className="flex flex-col items-center justify-between mt-4">
               <button
                 type="submit"
-                className="bg-red-500 text-white w-full py-3 rounded hover:bg-red-600 transition"
+                className="bg-red-500 text-white w-full py-3 rounded hover:bg-red-600 transition cursor-pointer"
               >
                 Create Account
               </button>

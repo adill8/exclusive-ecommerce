@@ -15,10 +15,14 @@ import PageError from './Pages/PageError';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Whishlist from './Pages/Whishlist';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const App = () => {
   return (
+    <>
     <div>
       <Navbar/>
       <Routes>
@@ -33,12 +37,11 @@ const App = () => {
         <Route path='/productDetail/:id' element ={<ProductDetail/>}/>
         <Route path='/pageError' element ={<PageError/>}/>
         <Route path='/whishlist' element ={<Whishlist/>}/>
-        
-        
-
       </Routes>
       <Footer/>
     </div>
+    <ToastContainer position='top-right' autoClose={2000}/>
+    </>
   )
 }
 

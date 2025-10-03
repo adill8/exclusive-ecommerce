@@ -8,16 +8,39 @@ import "slick-carousel/slick/slick-theme.css";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi2";
 import Slider from "react-slick";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const OurProducts = () => {
   const sliderRef = useRef(null);
-  const [ourProducts, setOurProducts] = useState([]);
+    const [ourProducts, setOurProducts] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:5000/ourProducts")
     .then((res) => setOurProducts(res.data))
     .catch((err) => console.error("Error fetching products:" , err))
   },[]);
+
+  const handleAddToCart = async(product) => {
+    try{
+      const res = await axios.get(`http://localhost:5000/cart?id=${product.id}`);
+      if (res.data.length > 0) {
+        const existingItem = res.data[0];
+        await axios.patch(`http://localhost:5000/cart/${existingItem.id}`,{
+          quantity: existingItem.quantity + 1
+      });  
+      }
+      else{
+        await axios.post("http://localhost:5000/cart", {
+          ...product,
+          quantity: 1,
+        });
+      }
+      toast.success(`${product.title} added to cart!`);
+    } catch(error){
+      console.error("Error adding to cart:", error);
+    }
+    
+  };
 
   const settings = {
     infinite: true,
@@ -122,9 +145,15 @@ const OurProducts = () => {
                 </Link>
 
                 {/* Hover Button */}
-                <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                
+                <button
+                onClick={() =>{
+                  console.log("clicked", product)
+                 handleAddToCart(product)}}
+                 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer">
                   Add to Cart
                 </button>
+                
               </div>
 
               {/* Product Info */}

@@ -4,6 +4,7 @@ import { PiEyeLight, PiHeartLight } from 'react-icons/pi';
 import { sellingProducts } from '../Data/SellingProductsData';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Products = () => {
   const [sellProducts, setSellProducts] = useState([]);
@@ -13,6 +14,28 @@ const Products = () => {
     .then((res) => setSellProducts(res.data))
     .catch((err) => console.log("Error fetching products:", err))
   },[]);
+
+  const handleAddToCart = async(product) =>{
+    try {
+      const res = await axios.get(`http://localhost:5000/cart?id=${product.id}`);
+      if(res.data.length > 0){
+        const existingItem = res.data[0];
+        await axios.patch(`http://localhost:5000/cart/${existingItem.id}` ,{
+          quantity: existingItem.quantity + 1
+        });
+      }
+      else{
+        await axios.post("http://localhost:5000/cart",{
+          ...product,
+          quantity: 1,
+        });
+      }
+      toast.success(`${product.title} added to cart!`);
+      
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-2">
@@ -46,7 +69,7 @@ const Products = () => {
 
 
             {/* Image */}
-            <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded">
+            <div className="bg-gray-100 p-4 h-60 flex items-center justify-center rounded relative">
               <Link to={`/productDetail/${product.id}`}>
               <img
                 src={product.image}
@@ -54,6 +77,15 @@ const Products = () => {
                 className="max-h-full object-contain"
               />
               </Link>
+
+              {/* Hover Button */}
+               <button
+                onClick={() =>{
+                  console.log("clicked", product)
+                 handleAddToCart(product)}}
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white w-full py-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer">
+                  Add to Cart
+                </button>
             </div>
 
             {/* Text */}
