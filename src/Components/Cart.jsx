@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { TrashIcon } from "@heroicons/react/24/outline";
+import { BsTrash2 } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -13,23 +16,39 @@ const Cart = () => {
       .catch((err) => console.error("Error fetching cart:", err));
   }, []);
 
+  // Delete Product
+  const handleDelete = async(id) =>{
+    try {
+      await axios.delete(`http://localhost:5000/cart/${id}`);
+    setCartItems(cartItems.filter(item => item.id !== id));
+    toast.success("Product removed from cart")
+
+    } catch (error) {
+      console.error("Error delting item", error);
+      
+    }
+  }
+
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
   return (
     <div className="p-4 md:p-8 max-w-6xl mx-auto my-7">
       <h2 className="text-lg font-semibold text-gray-700 mb-8">Home / Cart</h2>
 
       {/* Table Header */}
-      <div className="hidden md:grid grid-cols-4 gap-2 font-semibold p-4 bg-white rounded shadow-md">
+      <div className="hidden md:grid grid-cols-5 gap-2 font-semibold p-4 bg-white rounded shadow-md">
         <div>Product</div>
         <div>Price</div>
         <div>Quantity</div>
         <div>Subtotal</div>
+        <div>Action</div>
       </div>
 
       {/* Cart Items */}
       {cartItems.map((item) => (
         <div
           key={item.id}
-          className="grid md:grid-cols-4 grid-cols-1 gap-4 items-center p-4 bg-white rounded shadow-md mb-4"
+          className="grid md:grid-cols-5 grid-cols-1 gap-4 items-center p-4 bg-white rounded shadow-md mb-4"
         >
           <div className="flex items-center gap-2">
             <img
@@ -44,6 +63,16 @@ const Cart = () => {
             <span>{item.quantity}</span>
           </div>
           <div>${item.price * item.quantity}</div>
+
+          {/* Delte Button */}
+          <div>
+            <button
+            onClick={()=> handleDelete(item.id)}
+            className="text-red-500 hover:text-red-700 cursor-pointer">
+            <BsTrash2 size ={20}/>
+          </button>
+          </div>
+          
         </div>
       ))}
 

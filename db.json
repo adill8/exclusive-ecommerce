@@ -183,35 +183,7 @@
       ]
     }
   ],
-  "cart": [
-    {
-      "id": "14",
-      "title": "GP11 Shooter USB GamePad",
-      "price": 660,
-      "image": "/images/Game Pad.png",
-      "rating": 4.6,
-      "reviews": 145,
-      "tag": "NEW",
-      "description": "USB gamepad with vibration feedback and precision buttons. Ideal for shooter games, it provides ultimate control and smooth gameplay.",
-      "colors": [
-        "#3b3636",
-        "#DB4444"
-      ],
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "title": "RGB liquid CPU cooler",
-      "price": 160,
-      "oldPrice": 170,
-      "discount": 30,
-      "image": "/images/Speaker.png",
-      "rating": 4.8,
-      "reviews": 99,
-      "description": "Efficient liquid CPU cooler with RGB lighting. Maintains optimal temperatures for high-performance systems with quiet fan operation.",
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "register": [
     {
       "id": "9c48",
