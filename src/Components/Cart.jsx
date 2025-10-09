@@ -29,6 +29,42 @@ const Cart = () => {
     }
   }
 
+  // Increase Product
+  const handleIncrease = async(id) => {
+    const updateCart = cartItems.map((item) =>{
+      if (item.id === id) {
+        return{...item, quantity: item.quantity + 1};
+        
+      } else {
+        return item;
+        
+      }
+    });
+    setCartItems(updateCart);
+
+    const updateItem = updateCart.find((item) => item.id === id);
+    await axios.patch(`http://localhost:5000/cart/${id}`, {
+      quantity: updateItem.quantity,
+    });
+  }
+
+  // Decrease Product
+  const handleDecrease = async(id) => {
+    const updateCart = cartItems.map((item) => {
+      if (item.id === id && item.quantity > 1) {
+        return {...item, quantity: item.quantity - 1}
+      } else {
+        return item;
+      }
+    });
+    setCartItems(updateCart);
+
+    const updateItem = updateCart.find((item) => item.id === id);
+    await axios.patch(`http://localhost:5000/cart/${id}`, {
+      quantity: updateItem.quantity,
+    });
+  }
+
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -36,7 +72,7 @@ const Cart = () => {
       <h2 className="text-lg font-semibold text-gray-700 mb-8">Home / Cart</h2>
 
       {/* Table Header */}
-      <div className="hidden md:grid grid-cols-5 gap-2 font-semibold p-4 bg-white rounded shadow-md">
+      <div className="hidden md:grid grid-cols-5 gap-2 font-semibold p-4 bg-white rounded shadow-md text-center">
         <div>Product</div>
         <div>Price</div>
         <div>Quantity</div>
@@ -48,9 +84,9 @@ const Cart = () => {
       {cartItems.map((item) => (
         <div
           key={item.id}
-          className="grid md:grid-cols-5 grid-cols-1 gap-4 items-center p-4 bg-white rounded shadow-md mb-4"
+          className="grid md:grid-cols-5 grid-cols-1 gap-4 items-center text-center p-4 bg-white rounded shadow-md mb-4"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center gap-2">
             <img
               src={item.image}
               alt={item.title}
@@ -59,8 +95,16 @@ const Cart = () => {
             <span>{item.title}</span>
           </div>
           <div>${item.price}</div>
-          <div>
-            <span>{item.quantity}</span>
+          {/* Quantity Buttons */}
+          <div className="flex justify-center items-center gap-2">
+            <button
+            onClick={() => handleDecrease(item.id)}
+             className="w-6 h-6 flex items-center justify-center text-lg font-bold hover:bg-gray-200 cursor-pointer">-</button>
+             <span className="px-3 py-1 rounded border text-lg">{item.quantity}</span>
+            <button
+            onClick={() => handleIncrease(item.id)}
+             className="w-6 h-6 flex items-center justify-center text-lg font-bold hover:bg-gray-200 cursor-pointer">+</button>
+           
           </div>
           <div>${item.price * item.quantity}</div>
 

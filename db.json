@@ -183,7 +183,20 @@
       ]
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "2",
+      "title": "AK-900 Wired Keyboard",
+      "price": 960,
+      "oldPrice": 1160,
+      "discount": 35,
+      "description": "Ergonomic wired keyboard with smooth key response and LED backlight. Built for long typing sessions and gaming efficiency.",
+      "image": "/images/Keyboard.png",
+      "rating": 4.7,
+      "reviews": 75,
+      "quantity": 1
+    }
+  ],
   "register": [
     {
       "id": "9c48",
